@@ -1,0 +1,17 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"C3,C6,C5,C1,C4,C2";"CP_Radial_Tantal_D5.0mm_P5.00mmjm";6;"100nF";;;
+2;"D1";"LED_D3.0mm_FlatTop";1;"LED";;;
+3;"Y1";"Crystal_HC49-4H_Vertical";1;"8Mhz";;;
+4;"Sensair S8";"Senseair_S8_Down";1;"004-0-0053";;;
+5;"LM35";"TO-92_Inline";1;"LM35-LP";;;
+6;"R1";"R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal";1;"100k";;;
+7;"H2,H4,H1,H3";"MountingHole_2.2mm_M2_DIN965_Pad_TopBottom";4;"MountingHole";;;
+8;"BZ1";"Buzzer_12x9.5RM7.6";1;"Buzzer";;;
+9;"LCD";"PinHeader_2x08_P2.54mm_Verticaljm";1;"LCD-016N002L";;;
+10;"RV1";"Potentiometer_Piher_PT-15-V02_Vertical";1;"10k";;;
+11;"J3";"BarrelJack_CUI_PJ-063AH_Horizontaljm";1;"Barrel_Jack";;;
+12;"R3,R2";"R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal";2;"330";;;
+13;"SW1,PB0";"SW_PUSH_6mm_H7.3mm";2;"SW_Push_Dual";;;
+14;"L1";"L_Axial_L5.3mm_D2.2mm_P10.16mm_Horizontal_Vishay_IM-1";1;"100uH";;;
+15;"ATmega 16A-P";"DIP-40_W15.24mm";1;"ATmega16A-P";;;
+16;"PROGRAMATOR";"IDC-Header_2x05_P2.54mm_Vertical";1;"AVR-ISP-10";;;
