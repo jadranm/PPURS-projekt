@@ -173,8 +173,10 @@
       ],
       "track_widths": [
         0.0,
+        0.0,
         0.3,
-        0.5
+        0.5,
+        1.0
       ],
       "via_dimensions": [
         {
@@ -407,7 +409,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "Library"
+    ],
     "pinned_symbol_libs": []
   },
   "meta": {

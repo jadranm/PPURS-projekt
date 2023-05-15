@@ -1,4 +1,4 @@
-21572764069607903
+21574450571167843
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -60718,14 +60718,14 @@ Yellow 5381 Series LED
 2
 2
 Library
-BarrelJack_CUI_PJ-063AH_Horizontaljm
+BarrelJack_CUI_PJ-063AH_HorizontalJM
 Barrel Jack, 2.0mm ID, 5.5mm OD, 24V, 8A, no switch, https://www.cui.com/product/resource/pj-063ah.pdf
 barrel jack cui dc power
 0
 4
 3
 Library
-CP_Radial_Tantal_D5.0mm_P5.00mmjm
+CP_Radial_Tantal_D5.0mm_P5.00mmJM
 CP, Radial_Tantal series, Radial, pin pitch=5.00mm, , diameter=5.0mm, Tantal Electrolytic Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/TANTAL-TB-Serie%23.pdf
 CP Radial_Tantal series Radial pin pitch 5.00mm  diameter 5.0mm Tantal Electrolytic Capacitor
 0
@@ -60738,6 +60738,13 @@ Through hole pin header THT 2x08 2.54mm double row
 0
 16
 16
+Library
+tvz logo
+
+
+0
+0
+0
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
