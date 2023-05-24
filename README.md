@@ -1,5 +1,5 @@
 # PPURS-projekt
-C02 alarm baziran na ATmega16 platformi sa Senseair S8 senzorom
+C02 alarm baziran na ATmega platformi sa Senseair S8 senzorom
 
 Projekt je napravljen za kolegij Projektiranje i primjena ugradbenih računalnih sustava(PPURS).
 Dizajnirano u Kicadu.
