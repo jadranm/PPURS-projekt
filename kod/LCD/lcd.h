@@ -26,7 +26,7 @@
 #define LCD_RS_PORT      PORTD     	// port za odabir registra //RS
 #define LCD_RS_PIN       PD5          // pin  za odabir registra
 #define LCD_E_PORT       PORTB    	// port za odobrenje upisa //EN
-#define LCD_E_PIN        PB7          // port za odobrenje upisa
+#define LCD_E_PIN        PB7          // port za odobrenje upisa								//izmjenjeno PD7 na PB7
 
 #define LCD_LINES		2			// broj vidljivih linija na LCD displeju
 #define LCD_DISP_LENGTH  16    		// broj vidljivih znakova po liniji na LCD displeju
