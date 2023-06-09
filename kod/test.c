@@ -87,7 +87,7 @@ int main(void){
 		
 		lcd_clrscr();
 		lcd_home();
-		lcd_print("T = %0.2f%cC", T, 178);
+		lcd_print("Temp = %0.2f%cC", T, 178);
 		_delay_ms(500);
 		}
 	
