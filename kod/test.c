@@ -29,7 +29,7 @@ void inicijalizacija(){
 	set_port(PORTB ,PB0 ,1);
 	output_port(DDRB,PB4); // PB4 postavljen kao izlazni pin
 	adc_init();
-	usart_init (19200);
+	usart_init(9600);				//tako pise na internetu
 	
 	sei(); // globalno omogucavanje prekida
 }
@@ -65,7 +65,7 @@ int main(void){
 		_delay_ms (2000);
 		//zujanje();
 		
-		
+		*/
 		if(usart_read_all() == 1){
 			lcd_clrscr();
 			lcd_home();
@@ -77,7 +77,7 @@ int main(void){
 			lcd_print("ne radi");
 			_delay_ms(1000);
 		}
-		*/
+		/*
 		
 		//adc radi ok
 		ADC5 = adc_read_10bit(0);
@@ -89,6 +89,7 @@ int main(void){
 		lcd_home();
 		lcd_print("Temp = %0.2f%cC", T, 178);
 		_delay_ms(500);
+		*/
 		}
 	
 	return 0;
