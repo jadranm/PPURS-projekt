@@ -66,6 +66,19 @@ int main(void){
 		//zujanje();
 		
 		*/
+		int co2=0, high=0, low=0, resp=0;
+		
+		usart_write("\xFE\x44\x00\x08\x02\x9F\x25");		//uzeto iz random videa na youtubu
+		_delay_ms(1000);
+		
+		resp = usart_read_char();
+		high = resp[3];
+		low = resp[4];
+		co2 = (high*256) + low;
+		lcd_print("%d",co2);
+		_delay_ms(100);
+		
+		/*
 		if(usart_read_all() == 1){
 			lcd_clrscr();
 			lcd_home();
@@ -77,8 +90,9 @@ int main(void){
 			lcd_print("ne radi");
 			_delay_ms(1000);
 		}
-		/*
+		*/
 		
+		/*
 		//adc radi ok
 		ADC5 = adc_read_10bit(0);
 		Vout = ADC5 * VREF / 1023;
@@ -87,7 +101,9 @@ int main(void){
 		
 		lcd_clrscr();
 		lcd_home();
-		lcd_print("Temp = %0.2f%cC", T, 178);
+		lcd_print("Temperatura:");
+		lcd_gotoxy(1,0);		//radak pa stupac
+		lcd_print("%0.2f%cC", T, 178);
 		_delay_ms(500);
 		*/
 		}
