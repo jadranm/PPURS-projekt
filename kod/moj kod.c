@@ -60,7 +60,7 @@ int main(void){
 			_delay_ms(500);
 		}
 		else{
-			PORTB &= ~0xF0;			// inace ih iskljuci
+			PORTB &= ~0xF0;			
 		}
 		
 		//zujanje();

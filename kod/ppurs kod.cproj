@@ -181,6 +181,9 @@
     <Compile Include="ADC\adc.h">
       <SubType>compile</SubType>
     </Compile>
+    <None Include="pokusaj.c">
+      <SubType>compile</SubType>
+    </None>
     <Compile Include="USART\USART.c">
       <SubType>compile</SubType>
     </Compile>

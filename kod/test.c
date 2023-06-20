@@ -66,19 +66,27 @@ int main(void){
 		//zujanje();
 		
 		*/
-		int co2=0, high=0, low=0, resp=0;
 		
-		usart_write("\xFE\x44\x00\x08\x02\x9F\x25");		//uzeto iz random videa na youtubu
-		_delay_ms(1000);
+		uint16_t co2=0, high=0, low=0, resp=0;
 		
-		resp = usart_read_char();
+		usart_write_char("\xFE\x44\x00\x08\x02\x9F\x25");		//uzeto iz random videa na youtubu https://youtu.be/395yN1eJKyc
+		lcd_clrscr();
+		lcd_home();
+		lcd_print("usart poslan");
+		_delay_ms(2000);
+		
+		
+		/*
+		resp = usart_buffer();
 		high = resp[3];
 		low = resp[4];
 		co2 = (high*256) + low;
-		lcd_print("%d",co2);
+		lcd_print("CO2: %d ppm",co2);
 		_delay_ms(100);
 		
-		/*
+		*/
+		
+		
 		if(usart_read_all() == 1){
 			lcd_clrscr();
 			lcd_home();
@@ -90,7 +98,7 @@ int main(void){
 			lcd_print("ne radi");
 			_delay_ms(1000);
 		}
-		*/
+		
 		
 		/*
 		//adc radi ok
