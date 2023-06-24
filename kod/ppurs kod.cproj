@@ -181,21 +181,21 @@
     <Compile Include="ADC\adc.h">
       <SubType>compile</SubType>
     </Compile>
-    <None Include="pokusaj.c">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="USART\USART.c">
+    <Compile Include="finalni kod.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="USART\USART.h">
+    <Compile Include="Prekidi\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Prekidi\timer.h">
       <SubType>compile</SubType>
     </Compile>
     <None Include="moj kod.c">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="test.c">
+    <None Include="test.c">
       <SubType>compile</SubType>
-    </Compile>
+    </None>
     <Compile Include="AVR lib\AVR_lib.c">
       <SubType>compile</SubType>
     </Compile>
@@ -213,7 +213,7 @@
     <Folder Include="AVR lib" />
     <Folder Include="LCD" />
     <Folder Include="ADC" />
-    <Folder Include="USART" />
+    <Folder Include="Prekidi" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\AvrGCC.targets" />
 </Project>

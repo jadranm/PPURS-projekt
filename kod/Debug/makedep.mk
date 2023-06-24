@@ -4,9 +4,9 @@
 
 ADC\adc.c
 
-USART\USART.c
+finalni kod.c
 
-test.c
+Prekidi\timer.c
 
 AVR lib\AVR_lib.c
 
