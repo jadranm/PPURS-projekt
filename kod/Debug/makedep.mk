@@ -6,7 +6,7 @@ ADC\adc.c
 
 finalni kod.c
 
-Prekidi\timer.c
+Timer\timer.c
 
 AVR lib\AVR_lib.c
 

@@ -13,6 +13,7 @@
 #define BROJ_ZUJANJA 2
 #define BROJ_UZORKOVANJA 10
 
+uint8_t brojac_int1;
 
 void zujanje(){
 	
@@ -39,6 +40,10 @@ uint16_t usrednjavanje(uint8_t pin){
 
 ISR(INT1_vect) // prekidna rutina za INT1
 {
+	brojac_int1++;
+	if (brojac_int1=1){
+		
+	}
 	
 }
 
@@ -49,24 +54,37 @@ void inicijalizacija(){
 	sei();		//omogucavanje prekida
 	
 	set_port(PORTB ,PB0 ,1);
-	output_port(DDRB,PB4);	//PB4 postavljen kao izlazni pin
+	output_port(DDRB,PB4);		//PB4 postavljen kao izlazni pin
+	input_port(DDRD,PD3);		// pin PD3 postavljen kao ulazni
 	
+	
+	
+	//prekidi na oba brida
 	set_bit_reg(GICR,INT1); // omogucen vanjski prekid INT1
 	
 	set_bit_reg(MCUCR,ISC10); // ISC10 = 1
 	reset_bit_reg(MCUCR,ISC11); // ISC11 = 0
+
+	timer1_init ();																								//napravi novi branch prije vecih promjena npr. mjerenja pwm-a
+		
+	//koristim counter1 (16 bitni)
+	// normalan nacin rada - timer1
+	reset_bit_reg(TCCR1A ,WGM10); // WGM10 = 0
+	reset_bit_reg(TCCR1A ,WGM11); // WGM11 = 0
+	reset_bit_reg(TCCR1B ,WGM12); // WGM12 = 0
+	reset_bit_reg(TCCR1B ,WGM13); // WGM13 = 0
+	
+	
+	
 }
 
 int main(void){
 	inicijalizacija();
-	
-		uint16_t CO2 = 0;
 		
 		float Vout0; // napon na pinu PA0
 		float Temp;
 		const float VREF_temp = 5.0;
 	
-		
 		
 	while (1)
 	{

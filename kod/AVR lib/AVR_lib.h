@@ -28,6 +28,12 @@ AVR_lib.h
 #define input_port(x,y) x &= ~(1 << y)
 
 
+//postavljanje registra u 1 i 0
+
+#define set_bit_reg(x,y) x |= (1 << y)
+
+#define reset_bit_reg(x,y) x &= ~(1 << y)
+
 //debounce
 
 #define DEBOUNCE_TIME 25 // vrijeme u ms

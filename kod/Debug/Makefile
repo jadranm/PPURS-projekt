@@ -36,14 +36,14 @@ SUBDIRS :=  \
 ../AVR\ lib \
 ../LCD \
 ../ADC \
-../Prekidi
+../Timer
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../ADC/adc.c \
 ../finalni\ kod.c \
-../Prekidi/timer.c \
+../Timer/timer.c \
 ../AVR\ lib/AVR_lib.c \
 ../LCD/lcd.c
 
@@ -57,28 +57,28 @@ ASM_SRCS +=
 OBJS +=  \
 ADC/adc.o \
 finalni\ kod.o \
-Prekidi/timer.o \
+Timer/timer.o \
 AVR\ lib/AVR_lib.o \
 LCD/lcd.o
 
 OBJS_AS_ARGS +=  \
 ADC/adc.o \
 "finalni kod.o" \
-Prekidi/timer.o \
+Timer/timer.o \
 "AVR lib/AVR_lib.o" \
 LCD/lcd.o
 
 C_DEPS +=  \
 ADC/adc.d \
 finalni\ kod.d \
-Prekidi/timer.d \
+Timer/timer.d \
 AVR\ lib/AVR_lib.d \
 LCD/lcd.d
 
 C_DEPS_AS_ARGS +=  \
 ADC/adc.d \
 "finalni kod.d" \
-Prekidi/timer.d \
+Timer/timer.d \
 "AVR lib/AVR_lib.d" \
 LCD/lcd.d
 
@@ -110,7 +110,7 @@ ADC/adc.o: ../ADC/adc.c
 	@echo Finished building: $<
 	
 
-Prekidi/timer.o: ../Prekidi/timer.c
+Timer/timer.o: ../Timer/timer.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -DBOARD=STK600_MEGA  -I"../src" -I"../src/asf/common/applications/user_application/atmega16_stk600-mega" -I"../src/asf/common/boards" -I"../src/asf/common/utils" -I"../src/asf/mega/utils" -I"../src/config" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -O1 -fdata-sections -ffunction-sections -fdata-sections -g3 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -Werror-implicit-function-declaration -Wmissing-prototypes -Wpointer-arith -Wstrict-prototypes -mrelax -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

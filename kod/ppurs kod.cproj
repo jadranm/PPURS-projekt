@@ -184,10 +184,10 @@
     <Compile Include="finalni kod.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Prekidi\timer.c">
+    <Compile Include="Timer\timer.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Prekidi\timer.h">
+    <Compile Include="Timer\timer.h">
       <SubType>compile</SubType>
     </Compile>
     <None Include="moj kod.c">
@@ -213,7 +213,7 @@
     <Folder Include="AVR lib" />
     <Folder Include="LCD" />
     <Folder Include="ADC" />
-    <Folder Include="Prekidi" />
+    <Folder Include="Timer" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\AvrGCC.targets" />
 </Project>
