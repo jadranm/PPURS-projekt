@@ -21,7 +21,7 @@ void timer0_init(){
 void timer1_init(){
 	
 	TCCR1B &= ~TIMER_PRESCALER_MASK;
-	TCCR1B |= TIMER1_PRESCALER; // postavi djelitelj za timer1
+	TCCR1B |= TIMER1_PRESCALER_8; // postavi djelitelj za timer1
 	
 	TIMSK |= (1 << TOIE1); // omoguæi prekid TOV1
 	

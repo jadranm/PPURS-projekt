@@ -8,12 +8,13 @@
 #include <util/delay.h>
 #include "ADC/adc.h"
 #include <avr/interrupt.h>
+#include "timer/timer.h"
 
 
 #define BROJ_ZUJANJA 2
 #define BROJ_UZORKOVANJA 10
 
-uint8_t brojac_int1;
+uint16_t duty_duljina;
 
 void zujanje(){
 	
@@ -38,20 +39,32 @@ uint16_t usrednjavanje(uint8_t pin){
 		return ADC_prosjek;
 }
 
-ISR(INT1_vect) // prekidna rutina za INT1
-{
-	brojac_int1++;
-	if (brojac_int1=1){
-		
-	}
-	
+
+//interupti rade
+//tajmer ne radi
+ISR(INT1_vect){ // INT1 rastuci brid
+	TCNT1 = 0;
 }
+
+
+ISR(INT2_vect){ // INT2 padajuci brid 
+	duty_duljina = TCNT1;
+}
+
+ISR(TIMER1_OVF_vect){  //prekit timera1
+	
+	lcd_clrscr();
+	lcd_home();
+	lcd_print("preljev timera");
+	_delay_ms(1000);
+}
+
 
 void inicijalizacija(){
 	
 	lcd_init();
 	adc_init();
-	sei();		//omogucavanje prekida
+	
 	
 	set_port(PORTB ,PB0 ,1);
 	output_port(DDRB,PB4);		//PB4 postavljen kao izlazni pin
@@ -59,35 +72,60 @@ void inicijalizacija(){
 	
 	
 	
-	//prekidi na oba brida
-	set_bit_reg(GICR,INT1); // omogucen vanjski prekid INT1
+	//omoguceni prekidi na INT1 i INT2
+	set_bit_reg(GICR ,INT1);
+	set_bit_reg(GICR ,INT2); 
 	
+	//INT1 okida na rastuci bit
 	set_bit_reg(MCUCR,ISC10); // ISC10 = 1
-	reset_bit_reg(MCUCR,ISC11); // ISC11 = 0
+	set_bit_reg(MCUCR,ISC11); // ISC11 = 1
 
-	timer1_init ();																								//napravi novi branch prije vecih promjena npr. mjerenja pwm-a
-		
+	//INT2 okida na padajuci bit
+	//specijalni slucaj konfiguracije
+	reset_bit_reg(MCUCR,ISC2); // ISC2 = 0
+	
+
+	/*
 	//koristim counter1 (16 bitni)
 	// normalan nacin rada - timer1
 	reset_bit_reg(TCCR1A ,WGM10); // WGM10 = 0
 	reset_bit_reg(TCCR1A ,WGM11); // WGM11 = 0
 	reset_bit_reg(TCCR1B ,WGM12); // WGM12 = 0
 	reset_bit_reg(TCCR1B ,WGM13); // WGM13 = 0
+	*/
 	
+	sei();		//omogucavanje prekida
+	timer1_init();
 	
-	
+	TCNT1=0;
 }
+
+
 
 int main(void){
 	inicijalizacija();
-		
-		float Vout0; // napon na pinu PA0
-		float Temp;
-		const float VREF_temp = 5.0;
 	
+		//za ADC
+		const float VREF_temp = 5.0;
+		float Vout0;
+		float Temp,CO2;
+		float duty_cycle, postotak_duty;
+		
 		
 	while (1)
 	{
+
+		duty_cycle = duty_duljina * 0.001;
+		postotak_duty = (duty_cycle/1.002)*100;  //1.002 je sirina impulsa
+		CO2 = 2000 * (postotak_duty/100);
+		lcd_clrscr();
+		lcd_home();
+		lcd_print("%f", postotak_duty);
+		lcd_gotoxy(1,0);							//redak pa stupac
+		lcd_print("%0.0f ppm", CO2);
+		_delay_ms(500);
+
+		/*
 
 		//za ADC0 za LM35
 		uint16_t rezultat0 = 0;
@@ -102,7 +140,7 @@ int main(void){
 		lcd_gotoxy(1,0);							//redak pa stupac
 		lcd_print("%0.2f%cC", Temp, 178);
 		_delay_ms(500);
-		
+		*/	
 		}
 	return 0;
 }
