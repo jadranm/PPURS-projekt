@@ -190,12 +190,6 @@
     <Compile Include="Timer\timer.h">
       <SubType>compile</SubType>
     </Compile>
-    <None Include="moj kod.c">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="test.c">
-      <SubType>compile</SubType>
-    </None>
     <Compile Include="AVR lib\AVR_lib.c">
       <SubType>compile</SubType>
     </Compile>

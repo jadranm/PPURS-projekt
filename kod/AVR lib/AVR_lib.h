@@ -36,7 +36,7 @@ AVR_lib.h
 
 //debounce
 
-#define DEBOUNCE_TIME 25 // vrijeme u ms
+#define DEBOUNCE_TIME 10 // vrijeme u ms
 bool debounce(uint8_t* port, uint8_t pin, bool _value);
 void debounce2(uint8_t* port, uint8_t pin, bool _value, void (*f)());
 
