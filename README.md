@@ -14,4 +14,5 @@ ________________________________________________________________________________
 
 
 
-    TVZ prijediplomski elektrotehnika / Projektiranje i primjena ugradbenih računalnih sustava [PPURS] 2022/2023 6. semestar
+    TVZ prijediplomski elektrotehnika / Projektiranje i primjena ugradbenih računalnih sustava 
+    [PPURS] 2022/2023 6. semestar
