@@ -1,7 +1,7 @@
 # PPURS-projekt
 
 CO₂ alarm baziran na ATmega platformi sa Senseair S8 LP senzorom. 
-<br>Mikrokontroler ATmega 32 preko PWM izlaza senzora pomoću pinova za vanjske prekide izračunava koncentraciju ugljikovog dioksida u zraku. Uređaj ispisuje izmjerenu koncentraciju CO₂ na vanjskom LCD 16x2 displeju.
+<br>Mikrokontroler ATmega 32 koristeći PWM izlaz senzora s kojima pomoću pinova za vanjske prekide izračunava koncentraciju ugljikovog dioksida u zraku. Uređaj ispisuje izmjerenu koncentraciju CO₂ na vanjskom LCD 16x2 displeju.
 
 Projekt je napravljen za kolegij Projektiranje i primjena ugradbenih računalnih sustava (PPURS).
 <br>Programirano u Atmel studiu a PCB je dizajniran u KiCadu.
